@@ -66,5 +66,5 @@ Server Usage:
    - Example output: 
 
      ```json
-        {"food_ids": [8756, 9718, 2728 ... 1189, 1418]}
+     {"food_ids": [8756, 9718, 2728, ... , 1189, 1418]}
      ```
