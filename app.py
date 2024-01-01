@@ -6,10 +6,11 @@ from ultralytics import YOLO
 import base64
 from io import BytesIO
 from PIL import Image
-
+from flask_cors import CORS
 
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 model = YOLO('data/yolov8_food.pt')
 food_by_ingredients = pd.read_json('data/food_by_ingredients.json', orient='columns').set_index('ingredients')
@@ -44,4 +45,5 @@ class Detector(Resource):
 api.add_resource(Recommender, "/recommend")
 api.add_resource(Detector, "/detect/")
 
-app.run()
+if __name__ == "__main__":
+    app.run(port=8000, debug=True)
