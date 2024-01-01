@@ -19,9 +19,9 @@ with open('data/detection-model-class-id-encode.txt', 'r') as f:
 
 class Recommender(Resource):
     def post(self):
-        list_of_ingredients = request.get_json(True)['ids']
+        list_of_ingredients = request.get_json(True)['ingredient_ids']
         return {
-            'food_id': [idx for idx,_ in Counter(food_by_ingredients.loc[list_of_ingredients, 'id'].sum()).most_common(20)]
+            'food_ids': [idx for idx,_ in Counter(food_by_ingredients.loc[list_of_ingredients, 'id'].sum()).most_common(20)]
         }
 
 
@@ -36,7 +36,7 @@ class Detector(Resource):
         results = []
 
         for c, d in zip(cls, xywh):
-            results.append({"ingredients_id" : id_mapping[int(c)],
+            results.append({"ingredient_id" : id_mapping[int(c)],
                             "box":d.tolist()})    
         return results
 
