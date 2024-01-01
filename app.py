@@ -27,7 +27,7 @@ class Recommender(Resource):
 
 class Detector(Resource):
     def post(self):
-        datarequest = request.get_data()
+        datarequest = request.get_json()['image']
         image_data = base64.b64decode(datarequest)
         img = Image.open(BytesIO(image_data))
         out = model.predict(img, iou=0.5, imgsz=320, conf=0.3)[0]
