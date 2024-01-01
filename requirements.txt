@@ -1,0 +1,5 @@
+flask==2.3.2
+Flask-RESTful==0.3.9
+ultralytics==8.0.231
+Pillow==9.5.0
+pandas==2.1.3
