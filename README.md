@@ -17,7 +17,9 @@ Server Usage:
 
    - Method: POST
    - URL: http://127.0.0.1:5000/detect/
-   - Example input: `base64` encoding of this image![Example input image](./assets/rice_cheese_onion_ham_corn_ketchup.jpg "base64: /9j/4...5//Z")
+   - Example input: `base64` encoding of this image 
+
+      ![Example input image](./assets/rice_cheese_onion_ham_corn_ketchup.jpg "base64: /9j/4...5//Z")
 
    - Example output: `box` is in `xywh` format.
 
@@ -53,7 +55,7 @@ Server Usage:
       ]
      ```
 
-2. Food Recommendation:
+1. Food Recommendation:
 
    - Method: POST
    - URL: http://127.0.0.1:5000/recommend/
