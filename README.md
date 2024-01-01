@@ -9,7 +9,10 @@ Start flask server
 ```
 python app.py
 ```
-
+Start docker:
+```
+sudo docker-compose up
+```
 ### API Docs
 Server Usage:
 
