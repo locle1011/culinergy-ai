@@ -50,4 +50,4 @@ api.add_resource(Recommender, "/recommend")
 api.add_resource(Detector, "/detect/")
 
 if __name__ == "__main__":
-    app.run(port=8080, debug=True)
+    app.run(port=8080)
