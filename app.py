@@ -16,6 +16,10 @@ model = YOLO('data/yolov8_food.pt')
 food_by_ingredients = pd.read_json('data/food_by_ingredients.json', orient='columns').set_index('ingredients')
 with open('data/detection-model-class-id-encode.txt', 'r') as f:
     id_mapping = [int(w) for w in f.read().split()]
+    
+class HelloWorld(Resource):
+    def get(self):
+        return {'message': 'Hello, World!'}
 
 
 class Recommender(Resource):
@@ -41,7 +45,7 @@ class Detector(Resource):
                             "box":d.tolist()})    
         return results
 
-
+api.add_resource(HelloWorld, "/")
 api.add_resource(Recommender, "/recommend")
 api.add_resource(Detector, "/detect/")
 
