@@ -28,41 +28,30 @@ Server Usage:
      { "image": "/9j/4...5//Z" }
      ```
 
-   - Example output: `box` is in `xywh` format.
+   - Example output: `id` with `base64` encoding of cropped ingredient images. `id=-1` mean the original image with bounding box of detected ingredients.
 
      ```json
       [
          {
-            "ingredient_id": 1789,
-            "box": [
-                  220.81784057617188,
-                  99.18624877929688,
-                  110.39013671875,
-                  151.47592163085938
-            ]
+            "ingredient_id": -1,
+            "image": "/9j/4...5//Z"
          },
          {
             "ingredient_id": 1789,
-            "box": [
-                  100.06812286376953,
-                  222.4312744140625,
-                  132.0072479248047,
-                  105.67347717285156
-            ]
+            "image": "/9j/4...2P/Z"
+         },
+         {
+            "ingredient_id": 1789,
+            "image": "/9j/4...2Q=="
          },
          {
             "ingredient_id": 2478,
-            "box": [
-                  231.61294555664062,
-                  299.3686218261719,
-                  98.85093688964844,
-                  136.8990936279297
-            ]
+            "image": "/9j/4...2Q=="
          }
       ]
      ```
 
-1. Food Recommendation:
+2. Food Recommendation:
 
    - Method: POST
    - URL: http://127.0.0.1:5000/recommend/
